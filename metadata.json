@@ -1,0 +1,6 @@
+{
+  "name": "ST Scholarship Saathi",
+  "description": "Unified mobile-first scholarship module for Scheduled Tribe students under Ministry of Tribal Affairs (MoTA), India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

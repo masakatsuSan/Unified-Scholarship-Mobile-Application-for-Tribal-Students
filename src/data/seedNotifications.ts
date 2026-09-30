@@ -1,0 +1,140 @@
+import { NotificationRecord } from '../types/index.ts';
+
+export const initialNotifications: NotificationRecord[] = [
+  {
+    id: 'notif-001',
+    eventType: 'DWO_CORRECTION_REQUESTED',
+    title: 'Action Required: DWO Correction Request',
+    body: 'District Welfare Officer has requested a clarification on your application APP-2024-POST-0442. Please resolve the pending deficiency before 2024-10-15 to avoid processing delays.',
+    timestamp: '15 mins ago',
+    isRead: false,
+    priority: 'critical',
+    delivery: {
+      inApp: true,
+      sms: {
+        sent: true,
+        dltHeader: 'JM-NSPST',
+        timestamp: 'Today, 10:14 AM',
+        text: 'MoTA GOI: Attention Sunita Murmu! DWO raised a non-blocking deficiency on ST App #APP-2024-POST-0442. Action required before 2024-10-15. Visit Saathi app. - MoTA',
+        dltTemplateId: '1407168923412098472',
+      },
+      whatsApp: {
+        sent: true,
+        timestamp: 'Today, 10:14 AM',
+        text: '⚠️ *Non-Blocking Deficiency Notice | MoTA ST Saathi*\n\nDear *Sunita Murmu*,\n\nThe District Welfare Officer (DWO) has reviewed your application *APP-2024-POST-0442* for *Post-Matric Scholarship for ST Students*.\n\n• *Remarks:* Income mismatch detected against e-District Odisha portal.\n• *Statutory Deadline:* 2024-10-15\n• *Policy Notice:* Under MoTA non-blocking guidelines, your application is NOT rejected. You have an active window to resubmit valid proofs.',
+        templateId: 'mota_dwo_correction_notice',
+        quickReplies: ['Upload Document', 'Contact Helpdesk'],
+      },
+    },
+    actionLabel: 'Review Exception',
+    actionUrl: '#pending-actions',
+    metadata: {
+      applicationId: 'APP-2024-POST-0442',
+      applicationNumber: 'APP-2024-POST-0442',
+      schemeName: 'Post-Matric Scholarship for ST Students',
+      deadline: '2024-10-15',
+      dwoRemarks: 'Discrepancy in declared income vs Odisha e-District certificate',
+    },
+  },
+  {
+    id: 'notif-002',
+    eventType: 'DBT_DISBURSED',
+    title: 'DBT Scholarship Credit Confirmed',
+    body: 'Direct Benefit Transfer of ₹48,000 has been successfully credited to your Aadhaar-seeded State Bank of India account (UTR: SBIN00481920384).',
+    timestamp: 'Yesterday, 4:32 PM',
+    isRead: true,
+    priority: 'high',
+    delivery: {
+      inApp: true,
+      sms: {
+        sent: true,
+        dltHeader: 'AX-MOTAGOI',
+        timestamp: 'Yesterday, 4:32 PM',
+        text: 'MoTA GOI: Dear Ramesh Soren, ₹48,000 for National Fellowship for Higher Education credited to your Aadhaar-linked State Bank of India a/c. UTR: SBIN00481920384. - MoTA Tribal Affairs',
+        dltTemplateId: '1407168923412098471',
+      },
+      whatsApp: {
+        sent: true,
+        timestamp: 'Yesterday, 4:33 PM',
+        text: '🏛️ *Government of India | Ministry of Tribal Affairs*\n\nDear *Ramesh Soren*,\n\nWe are pleased to inform you that scholarship installment of *₹48,000* has been successfully credited via PFMS / Aadhaar Payment Bridge.\n\n• *Scheme:* National Fellowship for Higher Education\n• *Bank:* State Bank of India\n• *UTR / Reference:* `SBIN00481920384`\n• *Aadhaar Seeding Status:* Active ✅',
+        templateId: 'mota_dbt_disbursement_v2',
+        quickReplies: ['View Passbook & UTR', 'Report Issue'],
+      },
+    },
+    actionLabel: 'View Wallet & Receipt',
+    actionUrl: '#wallet',
+    metadata: {
+      amount: 48000,
+      bankName: 'State Bank of India',
+      utrNumber: 'SBIN00481920384',
+      schemeName: 'National Fellowship for Higher Education',
+    },
+  },
+  {
+    id: 'notif-003',
+    eventType: 'APPLICATION_SUBMITTED',
+    title: 'Application Submitted Successfully',
+    body: 'Your scholarship application APP-2024-TOP-0812 for Top Class Education for ST Students has been submitted and forwarded to your Institution Nodal Officer for verification.',
+    timestamp: '3 days ago',
+    isRead: true,
+    priority: 'normal',
+    delivery: {
+      inApp: true,
+      sms: {
+        sent: true,
+        dltHeader: 'AX-MOTAGOI',
+        timestamp: 'Sep 15, 11:20 AM',
+        text: 'MoTA GOI: Dear Birsa Munda, your ST scholarship application #APP-2024-TOP-0812 for Top Class Education for ST Students is submitted. Track on Saathi portal. - MoTA',
+        dltTemplateId: '1407168923412098473',
+      },
+      whatsApp: {
+        sent: true,
+        timestamp: 'Sep 15, 11:21 AM',
+        text: '✅ *Application Acknowledgement | Ministry of Tribal Affairs*\n\nHello *Birsa Munda*,\n\nYour scholarship application has been registered on the MoTA Unified Integration Hub.\n\n• *Application No:* `APP-2024-TOP-0812`\n• *Scheme:* Top Class Education for ST Students\n• *Next Step:* Institute Verification within 7 working days',
+        templateId: 'mota_app_submission_ack',
+        quickReplies: ['Track Live Timeline', 'Download Receipt'],
+      },
+    },
+    actionLabel: 'Track Progress',
+    actionUrl: '#applications',
+    metadata: {
+      applicationNumber: 'APP-2024-TOP-0812',
+      schemeName: 'Top Class Education for ST Students',
+    },
+  },
+  {
+    id: 'notif-004',
+    eventType: 'RENEWAL_ALERT',
+    title: 'Annual Renewal Window Open',
+    body: 'The renewal portal for Pre-Matric Scholarship for ST Students (Class IX & X) is active. Complete your 1-click renewal with APAAR academic sync before 2024-11-30.',
+    timestamp: '5 days ago',
+    isRead: true,
+    priority: 'normal',
+    delivery: {
+      inApp: true,
+      sms: {
+        sent: true,
+        dltHeader: 'AX-MOTAGOI',
+        timestamp: 'Sep 13, 9:00 AM',
+        text: 'MoTA GOI: Dear Pooja Tirkey, renew your ST scholarship Pre-Matric Scholarship for current AY before 2024-11-30 on ST Saathi app. - MoTA',
+        dltTemplateId: '1407168923412098476',
+      },
+      whatsApp: {
+        sent: true,
+        timestamp: 'Sep 13, 9:01 AM',
+        text: '📅 *Scholarship Renewal Alert | MoTA*\n\nDear *Pooja Tirkey*,\n\nAnnual renewal for *Pre-Matric Scholarship for ST Students (Class IX & X)* is now open.\n\n• *Deadline:* 2024-11-30\n• *Benefit:* Seamless continuation of tuition fees & books allowance',
+        templateId: 'mota_renewal_window_open',
+        quickReplies: ['One-Click Renew', 'Update Details'],
+      },
+    },
+    actionLabel: 'Renew Application',
+    actionUrl: '#applications',
+    metadata: {
+      schemeName: 'Pre-Matric Scholarship for ST Students (Class IX & X)',
+      deadline: '2024-11-30',
+    },
+  },
+];
+
+export const seedNotifications = initialNotifications;
+
